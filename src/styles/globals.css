@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  cursor: url('/shape.svg') auto !important;
+
+}
+
+.azonix {
+  font-family: 'DM Serif Display', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #EAEDFC;
+}
+
+.text-gradient {
+  background: linear-gradient(130deg, #2B425B 66.3%, rgba(43, 66, 91, 0.00) 101.92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-light-theme {
+  opacity: 0.7;
+}
+
+.equate {
+  color: #273648;
+
+  text-align: center;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.stvs-head {
+  font-family: DM Serif Display;
+  font-size: 40px;
+  background: linear-gradient(130deg, #2B425B 66.3%, rgba(43, 66, 91, 0.00) 101.92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lightblue-grad {
+  background: linear-gradient(91deg, rgba(40, 122, 251, 0.20) 11.66%, rgba(40, 122, 251, 0.00) 97.48%);
+}
+
+.wrapper {
+  width: 95%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.nav-ul-parent ul li a {
+  color: black;
+  opacity: 0.7;
+  font-size: small;
+}
+
+.nav-ul-parent svg {
+  opacity: 0.7;
+}
+
+.btn-connect {
+  background: white;
+  /* filter: drop-shadow(0px 4px 20px rgba(230, 160, 54, 0.50)); */
+  transition: .8s all;
+  border: 1px solid #287AFB;
+  cursor: url('/shape.svg') 2 2, pointer;
+  color: black;
+}
+
+.banner-img {
+  top: 12%;
+  left: 26%;
+  z-index: -1;
+}
+
+.banner-img img {
+  width: 80%;
+}
+
+.pre_form {
+  width: 60%;
+  margin: auto;
+  background-color: rgba(244, 245, 254, 0.60);
+  padding: 2rem 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 20px;
+}
+
+.banner-shadow {
+  top: -19%;
+  right: -4%;
+  z-index: -1;
+  width: 45%;
+}
+
+.banner-shadow img {
+  width: 100%;
+}
+
+.banner-coin {
+  z-index: 10;
+  top: 1%;
+  left: 10%;
+}
+
+.banner-coin img {
+  width: 75%;
+}
+
+.banner_btn {
+  border-radius: 24px;
+  background: linear-gradient(111deg, #479DFF 23.78%, #3F6EE9 75.79%);
+  box-shadow: 10px 10px 50px 0px rgba(65, 123, 239, 0.50);
+}
