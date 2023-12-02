@@ -179,15 +179,15 @@ export default function Home() {
                         </li>
                       </ul>
                     </div>
-                  </div> 
+                  </div>
                   <div className='py-3 flex gap-4'>
                     <div className='text-start w-2/4'>
                       <label htmlFor="" className='text-[#5F6F89] mb-2 block font-[600] lg:text-[13px] text-[10px]'>Amount You Pay</label>
-                      <input type="text" value='1200' onChange={() => { }} className='w-full p-4 focus:outline-none rounded-[23px] text-[#273648] text-[14px] font-bold' />
+                      <input type="text" className='w-full p-4 focus:outline-none rounded-[23px] text-[#273648] text-[14px] font-bold' />
                     </div>
                     <div className='text-start w-2/4'>
                       <label htmlFor="" className='text-[#5F6F89] mb-2 block font-[600] lg:text-[13px] text-[10px]'>TRHUB Amount You Receive</label>
-                      <input type="text" value='1459920,000' onChange={() => { }} className='w-full p-4 focus:outline-none rounded-[23px] text-[#273648] text-[14px] font-bold' />
+                      <input type="text" className='w-full p-4 focus:outline-none rounded-[23px] text-[#273648] text-[14px] font-bold' />
                     </div>
                   </div>
                   <button className='banner_btn w-full p-4 text-white font-[600] mt-4 text-sm'>Connect Wallet</button>
