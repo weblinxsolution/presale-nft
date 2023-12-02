@@ -23,7 +23,7 @@ export default function Home() {
             <div className="lg:flex flex-wrap items-center justify-between mx-auto p-4">
               <div className='flex justify-between items-center'>
                 <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                  <Image src='/logo-lion.png' className="lg:w-3/4 logo_" alt="Flowbite Logo" />
+                  <img src='/logo-lion.png' className="lg:w-3/4 logo_" alt="Flowbite Logo" />
                 </a>
                 <div className='flex gap-8 items-center'>
                   <button className='btn-connect lg:hidden md:block text-sm p-3 lg:px-4 px-4 rounded-2xl font-bold'>Connect Wallet</button>
@@ -68,7 +68,7 @@ export default function Home() {
                     </svg>
                   </a>
                   <a href="https://www.instagram.com/swisscheese_finance" target="_blank" rel="noopener noreferrer">
-                    <Image src="/insta-blue.png" className='items-center' alt="instagram" />
+                    <img src="/insta-blue.png" className='items-center' alt="instagram" />
                   </a>
                 </div>
                 <button className='btn-connect lg:block md:hidden text-sm p-3 lg:px-4 px-4 rounded-2xl font-bold'>Connect Wallet</button>
@@ -76,7 +76,7 @@ export default function Home() {
             </div>
           </nav>
         </div>
-        <Image src="/bg-top-shape.png" className='absolute top-0 left-0 -z-0 w-1/2' alt="image" />
+        <img src="/bg-top-shape.png" className='absolute top-0 left-0 -z-0 w-1/2' alt="image" />
       </section>
 
 
@@ -196,22 +196,22 @@ export default function Home() {
                     <span className='text-[#5F6F89] font-[600]'>
                       Powered by
                     </span>
-                    <Image src="/logo-lion.png" className="w-[20px]" alt="Flowbite Logo" />
+                    <img src="/logo-lion.png" className="w-[20px]" alt="Flowbite Logo" />
                     <span className='text-[#267BF6] font-[600]'>VTS Blockchain Engineers</span>
                   </div>
                 </div>
 
               </form>
               <div className='absolute banner-coin'>
-                <Image src="/coin.png" alt="image" />
+                <img src="/coin.png" alt="image" />
               </div>
             </div>
           </div>
           <div className='absolute banner-img'>
-            <Image src="/diamond.png" alt="image" />
+            <img src="/diamond.png" alt="image" />
           </div>
           <div className='absolute banner-shadow'>
-            <Image src="/shadow.png" alt="image" />
+            <img src="/shadow.png" alt="image" />
           </div>
         </div>
       </section>
@@ -239,7 +239,7 @@ export default function Home() {
           <div className='mt-4 wrapper'>
             <div className='flex grid-cols-2 gap-2'>
               <div className='flex justify-center'>
-                <Image src="/service.png" alt="image" />
+                <img src="/service.png" alt="image" />
               </div>
               <div className='my-auto'>
                 <p className='serv-para mb-8'>
@@ -269,7 +269,7 @@ export default function Home() {
             </svg>
           </div>
           <div>
-            <Image src="/grp.png" alt="image" />
+            <img src="/grp.png" alt="image" />
           </div>
           <div className="px-3"><p className="serv-para mb-8">Shape the future of finance with our cryptocurrency development services. Our area of expertise is developing custom cryptocurrencies that transform the way value is transferred. These digital assets go beyond traditional financial systems, enabling efficient and safe peer-to-peer international transactions.Were creating currencies that set a new standard for transparency, security, and accessibility on the basis of innovative blockchain technology and cryptographic principles.</p><button className="serv-btn pt-3 ps-10 pb-3 pe-10">Learn More</button></div>
         </div>
@@ -291,7 +291,7 @@ export default function Home() {
                 <h1 className='month'>Jan 2024</h1>
                 <p className='month-para'>Development begins</p>
               </div>
-              <Image src="/step-1.png" alt="" />
+              <img src="/step-1.png" alt="" />
             </div>
 
             <div className='relative mt-48'>
@@ -299,7 +299,7 @@ export default function Home() {
                 <h1 className='month'>Aug 2024</h1>
                 <p className='month-para'>Development begins</p>
               </div>
-              <Image src="/step-2.png" alt="" />
+              <img src="/step-2.png" alt="" />
             </div>
 
             <div className='relative mt-36'>
@@ -307,7 +307,7 @@ export default function Home() {
                 <h1 className='month'>Sep 2024</h1>
                 <p className='month-para'>Development begins</p>
               </div>
-              <Image src="/step-3.png" alt="" />
+              <img src="/step-3.png" alt="" />
             </div>
 
             <div className='relative mt-20'>
@@ -315,18 +315,18 @@ export default function Home() {
                 <h1 className='month'>Oct 2024</h1>
                 <p className='month-para'>Development begins</p>
               </div>
-              <Image src="/step-4.png" alt="" />
+              <img src="/step-4.png" alt="" />
             </div>
             <div className='relative'>
               <div className='absolute nov-adj'>
                 <h1 className='month'>Nov 2024</h1>
                 <p className='month-para'>Development begins</p>
               </div>
-              <Image src="/step-5.png" alt="" />
+              <img src="/step-5.png" alt="" />
             </div>
           </div>
           <div className='absolute lion-adj'>
-            <Image src="/Mask-group.png" alt="" />
+            <img src="/Mask-group.png" alt="" />
           </div>
         </div>
       </section>
@@ -368,7 +368,7 @@ export default function Home() {
                 <p className='month-para'>Development begins</p>
               </div>
             </div>
-            <Image src="/roadmap.png" className='road_map_img' alt="image" />
+            <img src="/roadmap.png" className='road_map_img' alt="image" />
           </div>
         </div>
       </section>
@@ -378,17 +378,17 @@ export default function Home() {
       {/* for desktop start */}
       <section className='hidden lg:block'>
         <footer className='wrapper flex justify-between items-center'>
-          <Image src="/logo-sm.png" className='me-auto' alt="" />
+          <img src="/logo-sm.png" className='me-auto' alt="" />
           <div className='flex justify-between me-8'>
             <p className=' me-7'>Privacy Policy</p>
             <p className=' me-7'>Terms and consition</p>
             <p className=' me-7'>Contact us</p>
           </div>
           <div className='flex justify-between me-10'>
-            <Image src="/telegram-blue.png" className='h-3 me-3' alt="" />
-            <Image src="/discord-blue.png" className='h-3 me-3' alt="" />
-            <Image src="/twitter-blue.png" className='h-3 me-3' alt="" />
-            <Image src="/insta-blue.png" className='h-3 me-3' alt="" />
+            <img src="/telegram-blue.png" className='h-3 me-3' alt="" />
+            <img src="/discord-blue.png" className='h-3 me-3' alt="" />
+            <img src="/twitter-blue.png" className='h-3 me-3' alt="" />
+            <img src="/insta-blue.png" className='h-3 me-3' alt="" />
           </div>
           <span>All rights reserved by VTS 2024</span>
         </footer>
@@ -400,10 +400,10 @@ export default function Home() {
         <div className='wrapper mt-6'>
           <footer className='flex justify-between pt-20 items-center pb-4'>
             <div className='flex justify-between me-10'>
-              <Image src="/telegram-blue.png" className='h-3 me-3' alt="" />
-              <Image src="/discord-blue.png" className='h-3 me-3' alt="" />
-              <Image src="/twitter-blue.png" className='h-3 me-3' alt="" />
-              <Image src="/insta-blue.png" className='h-3 me-3' alt="" />
+              <img src="/telegram-blue.png" className='h-3 me-3' alt="" />
+              <img src="/discord-blue.png" className='h-3 me-3' alt="" />
+              <img src="/twitter-blue.png" className='h-3 me-3' alt="" />
+              <img src="/insta-blue.png" className='h-3 me-3' alt="" />
             </div>
             <span className='text-[12px] text-[#A8A8CF]'>All rights reserved by VTS 2024</span>
           </footer>
