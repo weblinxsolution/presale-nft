@@ -195,7 +195,7 @@ export default function Home() {
                     <span className='text-[#5F6F89] font-[600]'>
                       Powered by
                     </span>
-                    <img src="/logo-lion.png" className="w-[20px]" alt="Flowbite Logo"></img>
+                    <img src="/logo-lion.png" className="w-[20px]" alt="Flowbite Logo" />
                     <span className='text-[#267BF6] font-[600]'>VTS Blockchain Engineers</span>
                   </div>
                 </div>
