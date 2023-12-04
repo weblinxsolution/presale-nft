@@ -3,24 +3,40 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+
 import 'swiper/css';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import SwiperCore from 'swiper';
 import 'swiper/css';
 
 const inter = Inter({ subsets: ['latin'] })
 
+SwiperCore.use([Navigation]);
+
 export default function Home() {
   const [menu, setMenu] = useState(false);
   const [dropdown, setdropdown] = useState(false);
+  const navigationPrevRef = useRef(null)
+  const navigationPrevRef2 = useRef(null)
+  const navigationNextRef = useRef(null)
+  const navigationNextRef2 = useRef(null)
+  const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
+  const [swiperInstance2, setSwiperInstance2] = useState<SwiperCore | null>(null);
+  const [isInitialized, setIsInitialized] = useState(false);
+  const [isInitialized2, setIsInitialized2] = useState(false);
 
+  const swiperRef = useRef();
   const swiper = useSwiper()
+  const [_, setInit] = useState(false);
+  const [Learnmore, setLearnmore] = useState(false);
+
 
   return (
     <main className='main-background'>
       {/* Header Start */}
-      <section className='relative z-10'>
+      <section className='relative z-20'>
         <div className='wrapper relative z-10 text-black'>
           <nav className="bg-transparent">
             <div className="lg:flex flex-wrap items-center justify-between mx-auto p-4">
@@ -41,7 +57,7 @@ export default function Home() {
                 <div className="w-full md:block md:w-auto" id="navbar-default">
                   <ul className="flex lg:flex-row flex-col lg:gap-20 gap-5  text-black">
                     <li>
-                      <a href="#" className="block cursor py-2 px-3 rounded md:bg-transparent color-blue md:p-0 " aria-current="page">Home</a>
+                      <a href="#" className="block hover:text-[#489EFF] cursor py-2 px-3 rounded md:bg-transparent  md:p-0 " aria-current="page">Home</a>
                     </li>
                     <li>
                       <a href="#services" className="block py-2 px-3 rounded md:bg-transparent hover:text-[#489EFF] md:p-0" aria-current="page">Services</a>
@@ -62,13 +78,13 @@ export default function Home() {
                     </svg> */}
                   </a>
                   <a href="https://twitter.com/?lang=en" className='cursor' target="_blank" rel="noopener noreferrer">
-                  <img src="/twitter-blue.png" className='items-center' alt="instagram" />
+                    <img src="/twitter-blue.png" className='items-center' alt="instagram" />
                     {/* <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
                       <path d="M5.6367 15.9938C7.2786 16.0433 8.91487 15.7959 10.4488 15.2662C11.9827 14.7366 13.3831 13.9355 14.5673 12.9102C15.7515 11.8849 16.6955 10.6563 17.3434 9.29698C17.9913 7.93763 18.3299 6.47513 18.3394 4.99591C19.0919 4.15749 19.6506 3.19209 19.9828 2.15646C20.0076 2.07463 20.0056 1.9881 19.977 1.90728C19.9485 1.82646 19.8946 1.75479 19.8218 1.70091C19.7491 1.64703 19.6606 1.61323 19.567 1.60359C19.4734 1.59395 19.3787 1.60887 19.2943 1.64656C18.9007 1.81718 18.4575 1.87229 18.0272 1.80413C17.5969 1.73597 17.2013 1.54798 16.8959 1.26663C16.5061 0.88228 16.0346 0.572291 15.5093 0.35503C14.984 0.137768 14.4157 0.0176537 13.8379 0.00180381C13.2601 -0.0140461 12.6847 0.074691 12.1457 0.262757C11.6067 0.450823 11.1151 0.734391 10.7 1.09666C10.1317 1.59222 9.71547 2.21174 9.49172 2.89499C9.26796 3.57825 9.24432 4.302 9.42308 4.99591C5.70332 5.19588 3.14945 3.60618 1.10636 1.4266C1.04498 1.36401 0.964688 1.31887 0.875291 1.29669C0.785893 1.27451 0.691257 1.27625 0.60294 1.3017C0.514622 1.32715 0.436445 1.3752 0.377956 1.43999C0.319467 1.50478 0.283196 1.58351 0.273574 1.66655C-0.115647 3.6106 0.165123 5.61534 1.07817 7.41152C1.99122 9.2077 3.49283 10.7093 5.38131 11.7146C4.11508 13.0222 2.33689 13.8389 0.417923 13.9942C0.315116 14.0095 0.220211 14.0535 0.146493 14.1198C0.0727744 14.1861 0.0239313 14.2715 0.00679901 14.3641C-0.0103333 14.4566 0.00510294 14.5517 0.0509472 14.636C0.0967915 14.7202 0.170749 14.7895 0.26247 14.834C1.93194 15.5853 3.77041 15.982 5.6367 15.9938Z" fill="#287AFB" />
                     </svg> */}
                   </a>
                   <a href="https://t.me/swisscheesegroup" className='cursor' target="_blank" rel="noopener noreferrer">
-                  <img src="/telegram-blue.png" className='items-center' alt="instagram" />
+                    <img src="/telegram-blue.png" className='items-center' alt="instagram" />
                     {/* <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none">
                       <path d="M4.91725 9.61635L0.400472 8.14469C0.400472 8.14469 -0.139333 7.92568 0.0344845 7.42906C0.0702658 7.32665 0.142445 7.23951 0.358367 7.08976C1.35916 6.39217 18.8823 0.0938899 18.8823 0.0938899C18.8823 0.0938899 19.3771 -0.0728325 19.6689 0.0380587C19.7411 0.0604046 19.806 0.101525 19.8571 0.157213C19.9082 0.212901 19.9436 0.281157 19.9596 0.355001C19.9911 0.485428 20.0043 0.619615 19.9988 0.753685C19.9974 0.869666 19.9833 0.977164 19.9727 1.14574C19.866 2.86771 16.6722 15.7194 16.6722 15.7194C16.6722 15.7194 16.4811 16.4714 15.7965 16.4972C15.6282 16.5026 15.4606 16.4741 15.3036 16.4134C15.1466 16.3526 15.0034 16.2609 14.8827 16.1437C13.5392 14.988 8.89561 11.8673 7.86952 11.181C7.84637 11.1652 7.82688 11.1447 7.81235 11.1207C7.79783 11.0968 7.7886 11.07 7.78531 11.0422C7.77096 10.9699 7.84962 10.8803 7.84962 10.8803C7.84962 10.8803 15.9353 3.69315 16.1504 2.93866C16.1671 2.88021 16.1042 2.85137 16.0196 2.87697C15.4826 3.07454 6.17299 8.95362 5.14551 9.60247C5.07155 9.62485 4.99338 9.6296 4.91725 9.61635Z" fill="#287AFB" />
                     </svg> */}
@@ -96,11 +112,12 @@ export default function Home() {
             <div className='w-full'>
               <h1 className='xl:text-7xl md:text-6xl text-5xl text-[#287AFB] azonix'>VTS</h1>
               <div className='flex items-end mt-3'>
-                <h1 className='xl:text-7xl md:text-6xl text-5xl text-white text-gradient azonix font-bold'>Utility Tokens</h1>
+                <h1 className='xl:text-7xl md:text-6xl text-5xl text-white text-gradient azonix font-bold'>Utility Token</h1>
               </div>
               <p className='text-black py-4 text-light-theme text-sm font-normal lg:w-1/3 leading-loose lg:absolute'>
                 Envision, Empower, Evolve Leading the  Revolution through Strategic Web3, Mobile  and Blockchain Engineering
               </p>
+              <br className='lg:block xl:hidden' />
             </div>
             <div className='relative'>
               <form className='rounded text-center pre_form'>
@@ -109,7 +126,7 @@ export default function Home() {
                   <h2 className='stvs-head font-bold'>$VTS Pre Sale</h2>
                 </div>
                 <div className='lightblue-grad lg:px-10 px-3 py-2'>
-                  <div className='equate'>1 $VTS = <span className='text-[#287AFB]'>$0.10</span> <span className='text-sm font-bold ml-5'>$0.50</span></div>
+                  <div className='equate'>1 $VTS = <span className='text-[#287AFB]'>$0.10</span> <span className='text-sm font-bold ml-5'><del>$0.50</del></span></div>
                   <div className='flex justify-between items-center mt-lg-2'>
                     <span className='block lg:text-sm text-[12px] lg:font-[600] font-[300]'>Contributed Amount = 0</span>
                     <span className='block lg:text-sm text-[12px] lg:font-[600] font-[300]'>Estimated Tokens = 0</span>
@@ -189,11 +206,11 @@ export default function Home() {
                   </div>
                   <div className='py-3 flex gap-4'>
                     <div className='text-start w-2/4'>
-                      <label htmlFor="" className='text-[#5F6F89] mb-2 block font-[600] lg:text-[13px] text-[10px]'>Amount You Pay</label>
+                      <label htmlFor="" className='text-[#5F6F89] mb-2 block font-[600] lg:text-[12px] text-[10px]'>Amount You Pay</label>
                       <input type="text" className='w-full p-4 focus:outline-none rounded-[23px] text-[#273648] text-[14px] font-bold' />
                     </div>
                     <div className='text-start w-2/4'>
-                      <label htmlFor="" className='text-[#5F6F89] mb-2 block font-[600] lg:text-[13px] text-[10px]'>TRHUB Amount You Receive</label>
+                      <label htmlFor="" className='text-[#5F6F89] mb-2 block font-[600] lg:text-[12px] text-[10px]'>VTS Amount You Receive</label>
                       <input type="text" className='w-full p-4 focus:outline-none rounded-[23px] text-[#273648] text-[14px] font-bold' />
                     </div>
                   </div>
@@ -230,14 +247,25 @@ export default function Home() {
         <div className='mt-10 wrapper'>
           <div className='flex gap-3 items-end justify-center relative'>
             <h3 className='exp-grad absolute serv-pos-adj '>Explore our</h3>
-            <h1 className='serv-grad mb-0'>Service</h1>
+            <h1 className='serv-grad mb-0'>Services</h1>
           </div>
-          <div className='mt-5 flex justify-center items-center relative'>
+          <div className='mt-5 flex justify-center items-center relative h-[48px]'>
             <Swiper
-              spaceBetween={20}
-              slidesPerView={3}
-              onSlideChange={() => (console.log('slide change'))}
-              onSwiper={(swiper) => console.log(swiper)}
+              pagination={{
+                type: 'progressbar',
+              }}
+              // centerMode = {true}
+              spaceBetween={5}
+              slidesPerView={5}
+              navigation={true}
+              centeredSlides={true}
+              loop={true}
+              autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false
+                }}
+              modules={[Navigation]}
+              className="mySwiper items-center"
             >
               <SwiperSlide className='relative'>
                 <p className='links-light link-under-1 mx-3'>protocol development</p>
@@ -252,14 +280,8 @@ export default function Home() {
                 <p className='links-light link-under-4 mx-3'>Staking Mechanism</p>
               </SwiperSlide>
               <SwiperSlide className='relative'>
-                <p className='links-light link-under-5 mx-3 last-link-grad'>Smart Contract Audit</p>
+                <p className='links-light link-under-5 mx-3'>Smart Contract Audit</p>
               </SwiperSlide>
-
-              <div className='flex justify-end'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
-                  <path d="M1 11L6 6L1 1" stroke="#5F6F89" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
             </Swiper>
           </div>
           <div className='mt-4 wrapper'>
@@ -269,9 +291,13 @@ export default function Home() {
               </div>
               <div className='my-auto'>
                 <p className='serv-para mb-8'>
-                  Shape the future of finance with our cryptocurrency development services. Our area of expertise is developing custom cryptocurrencies that transform the way value is transferred. These digital assets go beyond traditional financial systems, enabling efficient and safe peer-to-peer international transactions.We re creating currencies that set a new standard for transparency, security, and accessibility on the basis of innovative blockchain technology and cryptographic principles.
+                  Shape the future of finance with our cryptocurrency development services. Our area of expertise is developing 
+                  custom cryptocurrencies that transform the way value is transferred. These digital assets go beyond traditional financial 
+                  systems, enabling efficient and safe peer-to-peer international transactions. {Learnmore ? "We re creating currencies that set a new standard for transparency, security, and accessibility on the basis of innovative blockchain technology and cryptographic principles." : ""}
                 </p>
-                <button className='serv-btn pt-3 ps-10 pb-3 pe-10'>Learn More</button>
+                <button className='serv-btn pt-3 ps-10 pb-3 pe-10' onClick={() => {
+                  setLearnmore(!Learnmore)
+                }}>Learn More</button>
               </div>
             </div>
           </div>
@@ -280,20 +306,26 @@ export default function Home() {
       {/* For Mobile */}
       <section id='services' className='lg:hidden block'>
         <div className='wrapper pb-10'>
-          <div className="flex gap-3 items-end justify-center relative"><h3 className="exp-grad serv-pos-adj ">Explore our</h3><h1 className="serv-grad mb-0">Service</h1></div>
+          <div className="flex gap-3 items-end justify-center relative"><h3 className="exp-grad serv-pos-adj ">Explore our</h3><h1 className="serv-grad mb-0">Services</h1></div>
           <div className='flex justify-center items-center'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+            {/* <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
               <path d="M6 11L1 6L6 1" stroke="#5F6F89" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <div className='flex justify-between items-center relative overflow-hidden w-full px-2 py-5'>
-              {/* <p className='links-light w-max'>Protocol Development</p>
-              <p className='links-light w-max'>Contract Creation</p>
-              <p className='links-light w-max last-link-grad'>NFT Development</p> */}
+            </svg> */}
+
+            <div className='flex justify-between items-center relative overflow-hidden w-full px-2 py-5  h-[55px]'>
+
               <Swiper
+                pagination={{
+                  type: 'progressbar',
+                }}
+                // centerMode = {true}
                 spaceBetween={5}
                 slidesPerView={3}
-                onSlideChange={() => (console.log('slide change'))}
-                onSwiper={(swiper) => console.log(swiper)}
+                navigation={true}
+                centeredSlides={true}
+                loop={true}
+                modules={[Navigation]}
+                className="mySwiper"
               >
                 <SwiperSlide className='relative'>
                   <p className='links-light link-under-1 mx-3'>protocol development</p>
@@ -308,25 +340,35 @@ export default function Home() {
                   <p className='links-light link-under-4 mx-3'>Staking Mechanism</p>
                 </SwiperSlide>
                 <SwiperSlide className='relative'>
-                  <p className='links-light link-under-5 mx-3 last-link-grad'>Smart Contract Audit</p>
+                  <p className='links-light link-under-5 mx-3'>Smart Contract Audit</p>
                 </SwiperSlide>
               </Swiper>
+
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+            {/* <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
               <path d="M1 11L6 6L1 1" stroke="#5F6F89" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            </svg> */}
+
+
           </div>
           <div>
             <img src="/grp.png" alt="image" />
           </div>
-          <div className="px-3"><p className="serv-para mb-8">Shape the future of finance with our cryptocurrency development services. Our area of expertise is developing custom cryptocurrencies that transform the way value is transferred. These digital assets go beyond traditional financial systems, enabling efficient and safe peer-to-peer international transactions.Were creating currencies that set a new standard for transparency, security, and accessibility on the basis of innovative blockchain technology and cryptographic principles.</p><button className="serv-btn pt-3 ps-10 pb-3 pe-10">Learn More</button></div>
+          <div className="px-3">
+            <p className="serv-para mb-8 opaque relative">Shape the future of finance with our cryptocurrency development services. Our area of expertise
+              is developing custom cryptocurrencies that transform the way value is transferred. These digital assets go beyond traditional
+              financial systems, enabling efficient and safe peer-to-peer international transactions.Were creating currencies that set a new
+            </p>
+            <button className="serv-btn pt-3 ps-10 pb-3 pe-10">Learn More</button>
+          </div>
         </div>
       </section>
       {/* services end */}
 
       {/* roadmap start */}
       {/* For Desktop */}
-      <section id='roadmap' className='hidden lg:block'>
+      <section id='roadmap' className='hidden lg:block relative'>
+
         <div className='mt-10 wrapper relative'>
           <div className='flex gap-3 items-end justify-center relative'>
             <h3 className='exp-grad absolute roadmap-pos-adj '>Explore our</h3>
@@ -334,40 +376,40 @@ export default function Home() {
           </div>
           <div className='relative mt-10 flex grid-cols-6 justify-center prior'>
             {/* 1 */}
-            <div className='relative mt-64'>
+            <div className='relative mt-64 step-1 prior'>
               <div className='absolute jan-adj'>
-                <h1 className='month'>Jan 2024</h1>
+                <h1 className='jan-month month'>Jan 2024</h1>
                 <p className='month-para'>Development begins</p>
               </div>
               <img src="/step-1.png" alt="" />
             </div>
 
-            <div className='relative mt-48'>
+            <div className='relative mt-48 step-2 prior'>
               <div className='absolute aug-adj'>
-                <h1 className='month'>Aug 2024</h1>
+                <h1 className='month aug-month'>Aug 2024</h1>
                 <p className='month-para'>Crowdsale starts</p>
               </div>
               <img src="/step-2.png" alt="" />
             </div>
 
-            <div className='relative mt-36'>
+            <div className='relative mt-36 step-3 prior'>
               <div className='absolute sep-adj'>
-                <h1 className='month'>Sep 2024</h1>
+                <h1 className='month sep-month'>Sep 2024</h1>
                 <p className='month-para'>Crowdsale ends</p>
               </div>
               <img src="/step-3.png" alt="" />
             </div>
 
-            <div className='relative mt-20'>
+            <div className='relative mt-20 step-4 prior'>
               <div className='absolute oct-adj'>
-                <h1 className='month'>Oct 2024</h1>
+                <h1 className='month oct-month'>Oct 2024</h1>
                 <p className='month-para'>Marketing</p>
               </div>
               <img src="/step-4.png" alt="" />
             </div>
-            <div className='relative'>
+            <div className='relative step-5 prior'>
               <div className='absolute nov-adj'>
-                <h1 className='month'>Nov 2024</h1>
+                <h1 className='month-f nov-month'>Nov 2024</h1>
                 <p className='month-para'>Platform launch</p>
               </div>
               <img src="/step-5.png" alt="" />
@@ -385,34 +427,34 @@ export default function Home() {
           <div className='relative prior flex flex-col gap-10 py-11 px-16 road_map'>
             {/* 1 */}
             <div className='relative'>
-              <div className='aug-adj'>
-                <h1 className='month'>Jan 2024</h1>
+              <div className='jan-adj'>
+                <h1 className='month text-[#2B425B] hover:text-[#287AFB] cursor-pointer'>Jan 2024</h1>
                 <p className='month-para'>Platform Launch</p>
               </div>
             </div>
-            <div className='relative translate-y-[18px]'>
+            <div className='relative translate-y-[22px]'>
               <div className='aug-adj'>
-                <h1 className='month'>Oct 2024</h1>
+                <h1 className='month text-[#2B425B] hover:text-[#287AFB] cursor-pointer'>Oct 2024</h1>
                 <p className='month-para'>Marketing</p>
               </div>
             </div>
 
-            <div className='relative translate-y-[36px]'>
+            <div className='relative translate-y-[42px]'>
               <div className='aug-adj'>
-                <h1 className='month'>Sep 2024</h1>
+                <h1 className='month text-[#2B425B] hover:text-[#287AFB] cursor-pointer'>Sep 2024</h1>
                 <p className='month-para'>Crowdsale ends</p>
               </div>
             </div>
 
-            <div className='relative translate-y-[57px]'>
+            <div className='relative translate-y-[67px]'>
               <div className='aug-adj'>
-                <h1 className='month'>Aug 2024</h1>
+                <h1 className='month text-[#2B425B] hover:text-[#287AFB] cursor-pointer'>Aug 2024</h1>
                 <p className='month-para'>Crowdsale starts</p>
               </div>
             </div>
-            <div className='relative translate-y-[77px]'>
+            <div className='relative translate-y-[90px]'>
               <div className='aug-adj'>
-                <h1 className='month'>Apr 2024</h1>
+                <h1 className='month text-[#2B425B] hover:text-[#287AFB] cursor-pointer'>Apr 2024</h1>
                 <p className='month-para'>Development begins</p>
               </div>
             </div>
@@ -426,19 +468,28 @@ export default function Home() {
       {/* for desktop start */}
       <section className='hidden lg:block'>
         <footer className='wrapper flex justify-between items-center'>
-          <img src="/logo-sm.png" className='me-auto' alt="" />
+          <img src="/logo-sm.png" className='me-auto cursor' alt="" />
           <div className='flex justify-between me-20'>
-            <p className=' me-7'>Privacy Policy</p>
-            <p className=' me-7'>Terms and consition</p>
-            <p className=' me-7'>Contact us</p>
+            <p className=' me-7 cursor-pointer'>Privacy Policy</p>
+            <p className=' me-7 cursor-pointer'>Terms and consition</p>
+            <p className=' me-7 cursor-pointer'>Contact us</p>
           </div>
           <div className='flex justify-between me-16'>
-            <img src="/telegram-blue.png" className='h-3 me-6' alt="" />
-            <img src="/discord-blue.png" className='h-3 me-6' alt="" />
-            <img src="/twitter-blue.png" className='h-3 me-6' alt="" />
-            <img src="/insta-blue.png" className='h-3 me-6' alt="" />
+            <a href="https://www.telegram.com" className='cursor-pointer'>
+
+              <img src="/telegram-blue.png" className='h-3 me-6 ' alt="" />
+            </a>
+            <a href="https://www.discord.com" className='cursor-pointer'>
+              <img src="/discord-blue.png" className='h-3 me-6' alt="" />
+            </a>
+            <a href="https://www.twitter.com" className='cursor-pointer'>
+              <img src="/twitter-blue.png" className='h-3 me-6' alt="" />
+            </a>
+            <a href="https://www.instagram.com" className='cursor-pointer'>
+              <img src="/insta-blue.png" className='h-3 me-6' alt="" />
+            </a>
           </div>
-          <span className='text-[#A8A8CF] text-[10px]'>All rights reserved by VTS 2024</span>
+          <span className='text-[#A8A8CF] text-[10px] cursor'>All rights reserved by VTS 2024</span>
         </footer>
       </section>
       {/* for desktop end */}
@@ -447,13 +498,22 @@ export default function Home() {
       <section className='lg:hidden block'>
         <div className='wrapper mt-6'>
           <footer className='flex justify-between pt-20 items-center pb-4'>
-            <div className='flex justify-between me-10'>
-              <img src="/telegram-blue.png" className='h-3 me-3' alt="" />
-              <img src="/discord-blue.png" className='h-3 me-3' alt="" />
-              <img src="/twitter-blue.png" className='h-3 me-3' alt="" />
-              <img src="/insta-blue.png" className='h-3 me-3' alt="" />
+            <div className='flex justify-between me-10 cursor'>
+              <a href="https://www.telegram.com" className='no-underline'>
+
+                <img src="/telegram-blue.png" className='h-3 me-3 cursor ' alt="" />
+              </a>
+              <a href="https://www.discord.com" className='no-underline'>
+                <img src="/discord-blue.png" className='h-3 me-3' alt="" />
+              </a>
+              <a href="https://www.twitter.com" className='no-underline'>
+                <img src="/twitter-blue.png" className='h-3 me-3' alt="" />
+              </a>
+              <a href="https://www.instagram.com" className='no-underline'>
+                <img src="/insta-blue.png" className='h-3 me-3' alt="" />
+              </a>
             </div>
-            <span className='text-[12px] text-[#A8A8CF]'>All rights reserved by VTS 2024</span>
+            <span className='text-[12px] text-[#A8A8CF] cursor'>All rights reserved by VTS 2024</span>
           </footer>
         </div>
       </section>
