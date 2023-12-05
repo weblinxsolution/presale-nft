@@ -255,11 +255,15 @@ export default function Home() {
                 type: 'progressbar',
               }}
               // centerMode = {true}
+              loop={true}
               spaceBetween={5}
+              // slidesPerView={5}
               slidesPerView={5}
               navigation={true}
               centeredSlides={true}
-              loop={true}
+              loopAddBlankSlides={true}
+
+              slideToClickedSlide={true}
               autoplay={{
                     delay: 2000,
                     disableOnInteraction: false
@@ -267,6 +271,21 @@ export default function Home() {
               modules={[Navigation]}
               className="mySwiper items-center"
             >
+              <SwiperSlide className='relative'>
+                <p className='links-light link-under-1 mx-3'>protocol development</p>
+              </SwiperSlide>
+              <SwiperSlide className='relative'>
+                <p className='links-light link-under-2 mx-3'>Contact creation</p>
+              </SwiperSlide>
+              <SwiperSlide className='relative'>
+                <p className='links-light link-under-3 mx-3'>NFT development</p>
+              </SwiperSlide>
+              <SwiperSlide className='relative'>
+                <p className='links-light link-under-4 mx-3'>Staking Mechanism</p>
+              </SwiperSlide>
+              <SwiperSlide className='relative'>
+                <p className='links-light link-under-5 mx-3'>Smart Contract Audit</p>
+              </SwiperSlide>
               <SwiperSlide className='relative'>
                 <p className='links-light link-under-1 mx-3'>protocol development</p>
               </SwiperSlide>
@@ -320,9 +339,9 @@ export default function Home() {
                 }}
                 // centerMode = {true}
                 spaceBetween={5}
-                slidesPerView={3}
+                slidesPerView={1}
                 navigation={true}
-                centeredSlides={true}
+                // centeredSlides={true}
                 loop={true}
                 modules={[Navigation]}
                 className="mySwiper"
@@ -345,10 +364,6 @@ export default function Home() {
               </Swiper>
 
             </div>
-            {/* <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
-              <path d="M1 11L6 6L1 1" stroke="#5F6F89" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg> */}
-
 
           </div>
           <div>
@@ -470,9 +485,9 @@ export default function Home() {
         <footer className='wrapper flex justify-between items-center'>
           <img src="/logo-sm.png" className='me-auto cursor' alt="" />
           <div className='flex justify-between me-20'>
-            <p className=' me-7 cursor-pointer'>Privacy Policy</p>
-            <p className=' me-7 cursor-pointer'>Terms and consition</p>
-            <p className=' me-7 cursor-pointer'>Contact us</p>
+            <p className=' me-7 cursor-pointer hover:text-[#2977ff]'>Privacy Policy</p>
+            <p className=' me-7 cursor-pointer hover:text-[#2977ff]'>Terms and consition</p>
+            <p className=' me-7 cursor-pointer hover:text-[#2977ff]'>Contact us</p>
           </div>
           <div className='flex justify-between me-16'>
             <a href="https://www.telegram.com" className='cursor-pointer'>

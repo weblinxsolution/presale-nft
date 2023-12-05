@@ -89,7 +89,7 @@ body {
 }
 
 nav ul li a:hover {
-  cursor: grab !important;
+  cursor: pointer !important;
 }
 
 .nav-ul-parent svg {
@@ -194,19 +194,37 @@ nav ul li a:hover {
 .swiper {
   width: 100%;
   height: 100%;
-}
+  overflow: hidden;
 
+}
+.swiper-wrapper{
+  /* width: 100% !important; */
+/* margin: auto !important; */
+/* overflow: hidden; */
+}
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   /* background: #fff; */
-
   /* Center slide text vertically */
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 }
+.swiper-slide-active > p{
+  /* font-weight: bold; */
+  color: #000 !important;
+}
+.swiper-slide-active > p::after{
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 2px;
 
+  background-color: #489EFF;
+ 
+  top: 22px;
+}
 .swiper-slide img {
   display: block;
   width: 100%;
@@ -225,10 +243,10 @@ nav ul li a:hover {
   top: 22px;
 } */
 
-.swiper-button-next:after,
-.swiper-button-prev:after {
+.swiper-button-next::after,
+.swiper-button-prev::after {
   color: #489EFF;
-  font-size: 25px;
+  font-size: 25px !important;
   position: absolute;
   top: -2px;
 }
@@ -417,7 +435,7 @@ nav ul li a:hover {
 }
 
 .step-1:hover .jan-month {
-  cursor: grab;
+  cursor: pointer;
   background: linear-gradient(130deg, #287AFB 66.3%, #287AFB 101.92%);
   background-clip: text;
 }
@@ -447,7 +465,7 @@ nav ul li a:hover {
 }
 
 .step-2:hover .aug-month {
-  cursor: grab;
+  cursor: pointer;
   background: linear-gradient(130deg, #287AFB 66.3%, #287AFB 101.92%);
   background-clip: text;
 }
@@ -465,7 +483,7 @@ nav ul li a:hover {
 }
 
 .step-3:hover .sep-month {
-  cursor: grab;
+  cursor: pointer;
   background: linear-gradient(130deg, #287AFB 66.3%, #287AFB 101.92%);
   background-clip: text;
 }
@@ -483,7 +501,7 @@ nav ul li a:hover {
 }
 
 .step-4:hover .oct-month {
-  cursor: grab;
+  cursor: pointer;
   background: linear-gradient(130deg, #287AFB 66.3%, #287AFB 101.92%);
   background-clip: text;
 }
@@ -512,7 +530,7 @@ nav ul li a:hover {
 }
 
 .step-5:hover .nov-month {
-  cursor: grab;
+  cursor: pointer;
   background: linear-gradient(130deg, #287AFB 66.3%, #287AFB 101.92%);
   background-clip: text;
 }
@@ -526,15 +544,16 @@ nav ul li a:hover {
 }
 
 .cursor {
-  cursor: grab !important;
+  cursor: pointer !important;
 }
 
 @media(max-width:991px) {
   .road_map_img {
     position: absolute;
-    top: 8%;
+    top: 3%;
     left: 0;
-    width: 34%;
+    width: 13%;
+    height: 645px;
   }
 
   .wrapper {
@@ -582,7 +601,7 @@ nav ul li a:hover {
   }
 
   .links-light {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .serv-grad {
@@ -680,6 +699,7 @@ width: 90px;
     top: 11px;
   } */
 
+
   .swiper-button-prev:after {
     color: #5F6F89;
     font-size: 10px !important;
@@ -696,18 +716,25 @@ width: 90px;
     left: 25px;
   }
 
-  .links-light {
-    font-size: 6px !important;
-  }
+
 
   .road_map_img {
     position: absolute;
-    top: 8%;
+    top: 4%;
     left: 0;
-    width: 34%;
+    width: 16%;
   }
 }
-
+@media (max-width:730px) {
+  .road_map_img {
+    position: absolute;
+    top: 4%;
+    left: 0;
+    width: auto;
+    height: 565px;
+  }
+  
+}
 
 @media (max-width: 400px) {
 
